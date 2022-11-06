@@ -1,0 +1,45 @@
+from django.db import models
+
+# Create your models here.
+class researcher(models.Model):
+    photo = models.FileField(upload_to="researcher_photo", blank=True)
+    name = models.CharField(max_length=100)
+    nick_name = models.CharField(max_length=100)
+    Current_location = models.CharField(max_length=100)
+    nationality = models.CharField(max_length=100)
+    gender = models.CharField(max_length=50)
+    age = models.IntegerField()
+    study_field = models.CharField(max_length=100)
+    Email = models.CharField(max_length=100)
+    Password = models.CharField (max_length=100)
+    login = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=50)
+    social_media = models.CharField(max_length=200, blank=True)
+
+class participant(models.Model):
+    photo = models.FileField(upload_to="researcher_photo", blank=True)
+    name = models.CharField(max_length=100)
+    nick_name = models.CharField(max_length=100)
+    Current_location = models.CharField(max_length=100)
+    nationality = models.CharField(max_length=100)
+    gender = models.CharField(max_length=50)
+    age = models.IntegerField()
+    study_field = models.CharField(max_length=100)
+    Email = models.CharField(max_length=100)
+    Password = models.CharField (max_length=100)
+    login = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=50)
+    social_media = models.CharField(max_length=200, blank=True)
+    work_experience = models.CharField(max_length=200, blank=True)
+    education = models.CharField(max_length=200, blank=True)
+    marital_status = models.BooleanField(default=0)
+    incentive = models.CharField(max_length=100, blank=True, null=True)
+
+class interview(models.Model):
+    topic = models.CharField(max_length=200)
+    researcher_id = models.CharField(max_length=100)
+    consent = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    purpose = models.TextField(blank=True, null=True)
+    participant_id = models.TextField(blank=True, null=True)
+    mode = models.CharField(max_length=100, blank=True, null=True)
